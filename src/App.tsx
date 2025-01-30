@@ -33,3 +33,14 @@ function App() {
 }
 
 export default App
+
+
+/*
+
+26 min
+https://www.youtube.com/watch?v=u99tNt3TZf8&t=38s&ab_channel=Rocketseat
+
+17 min
+https://www.youtube.com/watch?v=HGMd3dbB-lM&ab_channel=Coffstack
+
+*/
