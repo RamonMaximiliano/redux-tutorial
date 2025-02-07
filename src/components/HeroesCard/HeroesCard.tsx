@@ -2,7 +2,7 @@ function HeroesCard() {
 
   return (
     <>
-
+      <div className="">HeroesCard</div>
 
     </>
   )

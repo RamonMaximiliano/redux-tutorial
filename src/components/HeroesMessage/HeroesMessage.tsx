@@ -3,7 +3,7 @@ function HeroesMessage() {
   return (
     <>
 
-
+<div className="">HeroesMessage</div>
     </>
   )
 }
