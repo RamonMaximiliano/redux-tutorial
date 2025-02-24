@@ -1,10 +1,16 @@
 import './App.css'
 import Login from './components/Login/Login'
+import SuccessMessage from './components/SuccessMessage/SuccessMessage'
+import {Provider} from "react-redux"
+import store from './store'
 
 function App() {
   return (
     <>
+    <Provider store={store} >
       <Login />
+      <SuccessMessage />
+      </Provider>
     </>
   )
 }
