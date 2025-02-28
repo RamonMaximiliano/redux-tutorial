@@ -1,14 +1,26 @@
+import { useState } from "react"
 import "./styles.css"
+import { connect } from "react-redux"
 
-function Login() {
+const saveName = (text:string) =>{
+  return {
+    type:"SAVE_NAME",
+    text
+  }
+}
+
+function Login({ dispatch }: { dispatch: (action: any) => void })  {
+  const [name,setName] = useState<string>("")
 
   return (
     <>
       <div className="main-login">
         <h1>Welcome</h1>
         <div className="main-form">
-          <input type="text" className="main-input"></input>
-          <input type="button" className="main-button" value="Login"></input>
+          <input type="text" className="main-input"
+          onChange={(e)=> setName(e.target.value)}></input>
+          <input type="button" className="main-button" value="Login"
+          onClick={()=>dispatch(saveName(name))}></input>
         </div>
 
       </div>
@@ -17,4 +29,13 @@ function Login() {
   )
 }
 
-export default Login
+export default connect()(Login);
+
+/*
+Quando você apenas despacha ações (dispatch) sem precisar ler dados do Redux, você pode usar connect() sem argumentos
+Isso conecta o componente ao Redux e permite que ele receba dispatch automaticamente via props, sem precisar de mapStateToProps.
+
+Sendo assim:
+
+export default connect()(Login);
+*/

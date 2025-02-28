@@ -1,30 +1,35 @@
 import { connect } from "react-redux"
 
-type Dude  =         {
-  id:number,
+type Dude = {
+  id: number,
   name: string
 }
 
-function SuccessMessage({ dudes }: { dudes: Dude [] }) {
+function SuccessMessage({ dudes, loggeduser }: { dudes: Dude[]; loggeduser: string; }) {
 
   return (
     <>
-      {dudes.map((dude:Dude )=> (
-         <div key={dude.id}>
+      {dudes.map((dude: Dude) => (
+        <div key={dude.id}>
           <p>{dude.id}</p>
           <p>{dude.name}</p>
 
-         </div>
+        </div>
       ))}
-
+      <div>
+        <h3>Logged User:</h3>
+        {loggeduser}
+      </div>
     </>
   )
 }
 
-const mapStateToProps = (state: Dude[]) => ({ dudes: state });
+const mapStateToProps = (state: { users: Dude[]; loggeduser: string }) => ({
+  dudes: state.users,
+  loggeduser: state.loggeduser
+});
 
 export default connect(mapStateToProps)(SuccessMessage);
-
 
 /*
 
