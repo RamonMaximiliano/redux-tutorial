@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "./styles.css"
 import { connect } from "react-redux"
+import { useNavigate } from "react-router-dom";
 
 const saveName = (text:string) =>{
   return {
@@ -10,7 +11,13 @@ const saveName = (text:string) =>{
 }
 
 function Login({ dispatch }: { dispatch: (action: any) => void })  {
-  const [name,setName] = useState<string>("")
+  const [name,setName] = useState<string>("");
+  const navigate = useNavigate();
+
+  function handleLogin(){
+    ()=>dispatch(saveName(name))
+    navigate("/SuccessMessage")
+  }
 
   return (
     <>
@@ -20,7 +27,7 @@ function Login({ dispatch }: { dispatch: (action: any) => void })  {
           <input type="text" className="main-input"
           onChange={(e)=> setName(e.target.value)}></input>
           <input type="button" className="main-button" value="Login"
-          onClick={()=>dispatch(saveName(name))}></input>
+          onClick={()=>handleLogin()}></input>
         </div>
 
       </div>

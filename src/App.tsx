@@ -1,15 +1,18 @@
 import './App.css'
 import Login from './components/Login/Login'
 import SuccessMessage from './components/SuccessMessage/SuccessMessage'
-import {Provider} from "react-redux"
+import { Provider } from "react-redux"
 import store from './store'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <>
-    <Provider store={store} >
-      <Login />
-      <SuccessMessage />
+      <Provider store={store} >
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/SuccessMessage" element={<SuccessMessage />} />
+        </Routes>
       </Provider>
     </>
   )
