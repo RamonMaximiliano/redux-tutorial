@@ -15,8 +15,12 @@ function Login({ dispatch }: { dispatch: (action: any) => void })  {
   const navigate = useNavigate();
 
   function handleLogin(){
-    ()=>dispatch(saveName(name))
-    navigate("/SuccessMessage")
+    if(!name){
+      window.alert("Please type your name!")
+    } else {
+      dispatch(saveName(name))
+      navigate("/SuccessMessage")
+    }
   }
 
   return (
@@ -29,9 +33,7 @@ function Login({ dispatch }: { dispatch: (action: any) => void })  {
           <input type="button" className="main-button" value="Login"
           onClick={()=>handleLogin()}></input>
         </div>
-
       </div>
-
     </>
   )
 }
