@@ -32,8 +32,7 @@ E altera os items no nome dele, ex favorite Heroes, na Heroes message
 Criar um painel de card com os Heroes para ele selecionar 
 
 
-
-26 min
+42 min
 https://www.youtube.com/watch?v=u99tNt3TZf8&t=38s&ab_channel=Rocketseat
 
 17 min
