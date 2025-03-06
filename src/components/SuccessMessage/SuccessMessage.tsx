@@ -1,4 +1,5 @@
 import { connect } from "react-redux"
+import "./styles.css"
 
 type Dude = {
   id: number,
@@ -9,14 +10,25 @@ function SuccessMessage({ dudes, loggeduser }: { dudes: Dude[]; loggeduser: stri
 
   return (
     <>
-      {dudes.map((dude: Dude) => (
-        <div key={dude.id}>
-          <p>{dude.id}</p>
-          <p>{dude.name}</p>
+        <h2>Default Redux State:</h2>
+      <div className="main-default">
 
-        </div>
-      ))}
-      <div>
+        {dudes.map((dude: Dude) => (
+          <div key={dude.id} className="card-default">
+            <div className="card-unity">
+              <h2>ID:</h2>
+              <p>{dude.id}</p>
+            </div>
+            <div className="card-unity">
+              <h2>Name:</h2>
+              <p>{dude.name}</p>
+              </div>
+          </div>
+        ))}
+      </div>
+      <h2>New provided Redux State:</h2>
+
+      <div className="main-changedState">
         <h3>Logged User:</h3>
         {loggeduser}
       </div>
